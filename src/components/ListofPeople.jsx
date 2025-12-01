@@ -64,10 +64,10 @@ function ListOfPeople() {
             console.log(`Sending to ${recipientEmail}: ${assignedPerson}`);
 
             return emailjs.send(
-                'service_px9bnsu',
-                'template_8nz1jcb',
+                process.env.REACT_APP_EMAILJS_SERVICE_ID,
+                process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
                 templateParams,
-                '03-gt6e_v59Zf2JMi'
+                process.env.REACT_APP_EMAILJS_PUBLIC_KEY
             );
         });
 
