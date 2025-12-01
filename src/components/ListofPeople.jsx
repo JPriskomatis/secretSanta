@@ -4,6 +4,11 @@ import '../index.css';
 import DisplayPeople from "./DisplayPeople"
 
 function ListOfPeople() {
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+
     const [people, setPeople] = useState([]);
     const [email, setEmail] = useState([]);
 
@@ -63,12 +68,7 @@ function ListOfPeople() {
 
             console.log(`Sending to ${recipientEmail}: ${assignedPerson}`);
 
-            return emailjs.send(
-                process.env.REACT_APP_EMAILJS_SERVICE_ID,
-                process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-                templateParams,
-                process.env.REACT_APP_EMAILJS_PUBLIC_KEY
-            );
+            return emailjs.send(serviceId, templateId, templateParams, publicKey);
         });
 
         Promise.all(promises)
