@@ -4,8 +4,8 @@ import '../index.css';
 import DisplayPeople from "./DisplayPeople"
 
 function ListOfPeople() {
-    const [people, setPeople] = useState(["Jason"]);
-    const [email, setEmail] = useState(["JPriskomatis@gmail.com"]);
+    const [people, setPeople] = useState([]);
+    const [email, setEmail] = useState([]);
 
     const [newPeople, setNewPeople] = useState("");
     const [newEmail, setNewEmail] = useState("");
