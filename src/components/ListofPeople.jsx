@@ -80,11 +80,12 @@ function ListOfPeople() {
     }
 
     return (
-        <div className="bg-white/30 backdrop-blur-3xlbackdrop-blur-4xl rounded-2xl p-8">
-            <h1 className="text-white">Secret Santa!</h1>
-            <div className="flex flex-col">
+        <div className="bg-white backdrop-blur-4xl rounded-2xl p-8">
+            <h1 className="text-[#652b2d]">Secret Santa!</h1>
+            <p className="pt-4">Add your name and your friends’ names & emails <br /> to get matched with your Secret Santa!</p>
+            <div className="flex flex-col pt-4">
                 <input
-                    className="m-4 border-b-2 border-yellow-500 bg-transparent focus:outline-none focus:border-blue-500 text-white"
+                    className="m-4 border-b-2 border-yellow-500 bg-transparent focus:outline-none focus:border-blue-500 text-black"
                     type="text"
                     color="red"
                     placeholder="Enter your name..."
@@ -92,13 +93,14 @@ function ListOfPeople() {
                     onChange={(e) => setNewPeople(e.target.value)}
                 />
                 <input
-                    className="m-4 border-b-2 border-yellow-500 bg-transparent focus:outline-none focus:border-blue-500 text-white"
+                    className="m-4 border-b-2 border-yellow-500 bg-transparent focus:outline-none focus:border-blue-500 text-black"
                     type="email"
                     placeholder="Enter your email..."
                     value={newEmail}
                     onChange={(e) => setNewEmail(e.target.value)}
                 />
-                <button 
+                <button
+                className="bg-green-500 text-white"
                 onClick={addPerson}>Add</button>
             </div>
 
@@ -107,7 +109,7 @@ function ListOfPeople() {
                 <DisplayPeople people={people} emails={email} onDelete={deletePeople} />
 
                 <button
-                    className="mt-8" 
+                    className="mt-8 bg-green-500 text-white" 
                     onClick={sendEmail}>Send Email</button>
             </div>
             
